@@ -1,0 +1,140 @@
+@charset "UTF-8";
+
+.cabecalhoPrincipal .container{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.cabecalhoPrincipal-nav{
+    display: flex;
+}
+
+/* configurações do rodape*/
+
+.rodapePrincipal-patrocinadores .container{
+    display: flex;
+    justify-content: space-between;
+}
+
+.rodapePrincipal-patrocinadores-list {
+    display: flex;
+    align-items: center;
+    justify-content: space-around; /*distribui os espacos entre os elementos*/
+    width: 70%;
+    margin-right: 5%;
+}
+
+.rodapePrincipal-contatoForm-fieldset{
+    display: flex;
+}
+
+.rodapePrincipal-navMap-list{
+    display: flex;
+    height: 250px;
+    /* flex-direction: column; /*reorganiza dos itens em colunas e nao mais em linhas*/
+    /* flex-wrap: wrap; coloca quebra de coluna */
+
+    flex-flow: column wrap; /*atalho :) */
+}
+
+.conteudoPrincipal-cursos{
+    display: flex;
+    flex-wrap: wrap; /*Quebra de linha ou coluna*/
+    flex-direction: row; /*sentido da quebra*/
+    margin: 1%;
+}
+
+.conteudoPrincipal-cursos-link{
+    width: 23%;
+}
+
+
+/*tirando a margem direita dos elementos multiplos
+ de 4 no grid do flex-box*/
+.conteudoPrincipal-cursos-link:nth-child(4n){
+    margin-right: 0px;
+}
+
+.conteudoPrincipal-cursos-link:nth-child(4n+1){
+    margin-left: 0px;
+}
+
+.videoSobre .container{
+    display: flex;
+}
+.videoSobre-sobre{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+    /*faz o item absorver o espaço excedente*/
+    flex-grow:1; 
+}
+
+.videoSobre-sobre-list{
+    flex-grow: 2;
+}
+
+.videoSobre-video{
+    width: auto;
+    height: 420px;
+    flex-grow: 1;
+    flex-shrink: 2;/* diminui o tamanhgo do video em 2 partes por 1*/
+}
+
+
+/*FORMATACAO MOBILE*/
+
+@media(max-width:768px){
+
+    .cabecalhoPrincipal-nav{
+        flex-direction: column;
+
+    }
+
+    .cabecalhoPrincipal .container{
+        flex-direction: column;  
+        align-items: initial;
+        text-align: center;
+    }
+
+    .conteudoPrincipal-cursos{
+        flex-direction: column;
+    }
+
+    .conteudoPrincipal-cursos-link{
+        width: 100%;
+    }
+
+    .rodapePrincipal-navMap-list{
+        height: auto;
+    }
+
+    .rodapePrincipal-patrocinadores .container{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .rodapePrincipal-patrocinadores-list{
+        margin: 0px;
+        width: 100%;
+    }
+
+    .rodapePrincipal-contatoForm-fieldset{
+        width: 100%;
+        justify-content: center;
+    }
+    .cabecalhoPrincipal-nav-link-app {
+        order: -1;/*coloca o link do app como 1 da lista no layout mobile*/
+    }
+
+    .videoSobre .container{
+        flex-direction: column;
+        width: auto;
+        margin-left: 1em;
+        margin-right: 1em;
+    }
+}
